@@ -7,7 +7,7 @@
     <title>I, Automata</title>
     <!-- google iconsfont api -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,1,-50..200&display=block"
         rel="stylesheet" />
     <!-- css -->
     <link rel="stylesheet" href="style.css">
@@ -19,54 +19,96 @@
 
 <body>
     <header class="flex-component row">
-        <span><button onclick="document.querySelector('article').classList.toggle('hidden')"><i
+        <span><button onclick="document.querySelector('aside.left section:has(>article)').classList.toggle('hidden')"><i
                     class="animated-pulse material-symbols-outlined accent">info</i> Dialogger</button></span>
-        <span></span>
-        <span><i class="animated-pulse material-symbols-outlined">graph_3</i></span>
+        <span>i, automata</span>
+        <span><button onclick="document.querySelector('aside.right section:has(>article)').classList.toggle('hidden')"><i    class="animated-pulse material-symbols-outlined accent">graph_3</i> Menu</button></span>
     </header>
     <!-- sidebar -->
     <aside class="left sidebar menu flex-component column">
-        <section class="flex column gapped">
+        <section class="flex column gapped flex-component">
             <i class="animated-rot-cw material-symbols-outlined faint">hub</i>
         </section>
-        <section>
+        <section class="column scrollable-viewbox">
             <article>
-                <i class="xl animated-rot-cw material-symbols-outlined faint">graph_6</i>
-                <h1>i, automata</h1>
+                <h1>About this game</h1>
                 <hr>
-                <p>Cellular microcosmos philosophy emulator.</p>
-                <br>
-                <p>Can you save the youniverse from the ever-changing storms of chaos? <i>&mdash; I, Automata</i></p>
+                <p><a href=""><i class="material-symbols-outlined">info</i> Browser sandbox game</a></p>
                 <p>I, Automata is a game, modelling the mythical, philosophical, psychological domains of the human
                     experience, as a cellular microcosmos simulator game.</p>
                 <p>Game is currently in development...<a href="https://github.com/ynvrshzl/i-automata">Open docs on
                         GitHub</a></p>
             </article>
+            <hr>
+            <article>
+                <h1>Changelog</h1>
+
+                <p class="faint">Coming soon...</p>
+            </article>
         </section>
     </aside>
     <main>
 
-        <section class="flex column">
-            <h1 class="title">i, automata.</h1>
-            <p><i>"To save the youniverse from the ever-changing storms of chaos."</i></p>
-            <hr>
-            <button type="button" class="cta"
-                onclick="">Play</button>
-            <button type="button" class="cta-alt">Philosopher's mode</button>
-            <button type="button">Options</button>
-            <button type="button">Documentation</button>
-            <hr>
-            <a href="https://github.com/ynvrshzl/i-automata"><i class="material-symbols-outlined">graph_3</i> Open on
-                GitHub</a>
+        <section class="flex row">
+            <!-- buttons main menu -->
+            <section class="flex column">
+                <i class="xl animated-rot-cw material-symbols-outlined faint">flip_camera_android</i>
+                <p></p>
+                <h1 class="title">i, automata.</h1>
+                <p><i>"To save the youniverse from the ever-changing storms of chaos."</i></p>
+                <hr>
+                <button type="button" class="cta" onclick="">Play sample</button>
+                <button type="button" class="cta-alt">Philosopher's mode</button>
+                <button type="button">Options</button>
+                <button type="button">Tutorial</button>
+                <button type="button">Documentation</button>
+                <hr>
+                <a href="https://github.com/ynvrshzl/i-automata"><i class="material-symbols-outlined">graph_3</i> Open
+                    on
+                    GitHub</a>
+            </section>
+            
+        
         </section>
     </main>
+    <!-- sidebar -->
+    <aside class="right sidebar menu flex-component column">
+        
+    <!-- samples -->
+            <section class="column scrollable-viewbox">
+                <p>Samples</p>
+                <article class="card">
+                    <p>
+                        <i class="xl material-symbols-outlined faint">cached</i>
+                    </p>
+                    <h1>Synchronicity</h1>
+                    <p class="faint">Celestial classical component</p>
+                    <p>Weaknesess, Strength, Synergy, Etc.</p>
+                </article>
+                <article class="card">
+                    <p>
+                        <i class="xl material-symbols-outlined faint">psychology</i>
+                    </p>
+                    <h1>Rage</h1>
+                    <p class="faint">Human autonomous emotion</p>
+                    <p>"Rage burns fury"</p>
+                    <p>Weaknesess, Strength, Synergy, Etc.</p>
+                </article>
+                <article class="card">
+                    <p>
+                        <i class="xl material-symbols-outlined faint">360</i>
+                    </p>
+                    <h1>Time</h1>
+                    <p class="faint">Human autonomous emotion</p>
+                    <p>"Rage burns fury"</p>
+                    <p>Weaknesess, Strength, Synergy, Etc.</p>
+                </article>
+            </section>
+            <section class="flex column cta-accent vertical-text">Prototype</section>
+    </aside>
     <footer class="flex-component row">
-        <span>
-
-            <i class="animated-rot-cw material-symbols-outlined ">hub</i>
-        </span>
-        <span></span>
-        <span></span>
+        <span><button onclick="document.querySelector('section:has(>article)').classList.toggle('hidden')"><i    class="animated-pulse material-symbols-outlined accent">info</i></button></span>
+        <span>i, automata</span>
     </footer>
 </body>
 
