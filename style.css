@@ -125,7 +125,7 @@ h1 {
     display: inline-block;
     vertical-align: middle;
     align-self: center;
-    /* line-height: 1; */
+    line-height: 0;
     text-transform: none;
     letter-spacing: normal;
     word-wrap: normal;
