@@ -1,46 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
 html,
 body {
     width: 100%;
     height: 100%;
     padding: 0;
     margin: 0;
+    line-height: 1.7;
 }
+
+:root {
+    --accent-color: rgb(209, 163, 255);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 html {
-    background-color: black;
+    font-size: 0.5em;
+    background: rgb(43, 43, 43);
     color: silver;
-    font-family: monospace;
+    font-family: "JetBrains Mono", monospace;
 }
+
 body {
     display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas: 
-    "header"
-    "viewport"
-    "footer";
+    gap: 1px;
+    padding: 1px;
+    grid-template-columns:
+        auto 1fr;
+    grid-template-rows:
+        auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "side-l viewport"
+        "footer footer";
 }
+
+aside {
+    grid-area: side-l;
+}
+
 header {
     grid-area: header;
 }
+
 footer {
     grid-area: footer;
 }
+.hidden {
+    display: none;
+}
 .flex-component.row {
     width: 100%;
+    /* border-radius: 5px; */
+    /* padding: 5px; */
+    /* padding-inline: 15px; */
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background-color: #ffffff22;
 }
 
-main {
-    grid-area: viewport;
+.flex-component.column {
+    height: 100%;
+    /* border-radius: 5px; */
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff0c;
+}
+
+article {
+    width: 300px;
+    margin: 0 auto;
+    overflow-y: auto;
+    /* height: 100%; */
+    padding: 35px;
+    /* background-color: #ffffff0e; */
+}
+.flex.column {
+    display: flex;
+    flex-direction: column;
+    /* height: 100%; */
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }
 main {
+    grid-area: viewport;
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 100%;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    padding: 15px;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: inherit;
+    font-size: 1.5em;
+    display: inline-block;
+    vertical-align: middle;
+    align-self: center;
+    /* line-height: 1; */
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    color: inherit;
+    user-select: none;
+}
+
+.xl.material-symbols-outlined {
+    font-size: 5rem;
+}
+
+.accent {
+    color: var(--accent-color);
+}
+
+.faint {
+    opacity: 0.5;
+}
+
+.animated-pulse {
+    animation: pulse .5s ease-in-out infinite alternate-reverse;
+}
+
+.animated-rot-cw {
+    animation: z-rot 3s linear infinite;
+}
+.gapped {
+    gap: 5px;
+}
+hr {
+    width: 100%;
+    border-color: #ffffff0f;
+}
+button {
+    appearance: none;
+    outline: 0;
+    border: 0px solid;
+    /* border-radius: 15px; */
+    /* border: 1px solid #ffffff22; */
+    /* background: transparent; */
+    background: #ffffff22;
+    /* margin: 1px;  */
+    padding: 5px; 
+    width: 100%;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    cursor: pointer;
+}
+button:hover {
+    background: var(--accent-color);
+    color: black;
+}
+.cta {
+    background: white;
+    color: black;
+}
+.cta-alt {
+    background: rgba(255, 255, 255, 0.473);
+    color: white;
+}
+
+@keyframes pulse {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes z-rot {
+    from {
+        transform: rotateZ(0deg);
+    }
+
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar {
+    background-color: #ffffff22;
+}
+
+::-webkit-scrollbar-thumb {
+    cursor: grab;
+    background-color: #ffffff55;
+}
+
+::-webkit-scrollbar-thumb:active {
+    cursor: grabbing;
 }
